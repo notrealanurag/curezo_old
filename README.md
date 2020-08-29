@@ -19,9 +19,6 @@ Rest API made using Django, Django-Rest-Framework and MySQLite
 
 ![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)
 
-**Recordit**
-
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
 
 ### Clone
 
