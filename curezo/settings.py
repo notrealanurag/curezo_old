@@ -15,7 +15,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['curezo.herokuapp.com','127.0.0.1']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -29,7 +28,6 @@ INSTALLED_APPS = [
     'knox',
     'corsheaders',
     'multiselectfield',
-
     'accounts',
     'medicines',
     'appointments',
@@ -40,6 +38,7 @@ APPEND_SLASH=False
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -67,7 +66,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'curezo.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -115,21 +113,23 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
-
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 REST_FRAMEWORK = {
     'DEFAULT_AUTHETICATION_CLASSES':('knox.auth.TokenAuthentication',)    
 }
 
-
-STATIC_ROOT ='static/'
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ORIGIN_WHITELIST = [
     'http://192.168.1.107:8080',
+    'http://curezo.netlify.app',
+    'curezo.netlify.app'
 ]
 # CORS_ORIGIN_REGEX_WHITELIST = [
 #     'http://localhost:8080',
