@@ -1,5 +1,3 @@
-
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -13,9 +11,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = ')=tk1^12x4537way11yj@dq$2$4yc54+2u&ovb_65y9lz@moy('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['curezo.herokuapp.com','127.0.0.1']
 
 
 # Application definition
