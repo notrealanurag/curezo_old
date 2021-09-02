@@ -1,4 +1,4 @@
-# Curezo Med Application (https://curezo.herokuapp.com/)
+# Curezo Med Application
 
 Rest API made using Django, Django-Rest-Framework and MySQLite
 
